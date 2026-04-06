@@ -1,0 +1,6 @@
+build/
+*.o
+*.out
+animal
+brains
+.DS_Store
