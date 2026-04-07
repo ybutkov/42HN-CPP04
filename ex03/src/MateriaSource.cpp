@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:26:17 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 18:21:20 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/07 20:55:24 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& right)
         {
             if (slots[i] != nullptr)
                 delete slots[i];
-            this->slots[i] = right.slots[i];
+            this->slots[i] = (right.slots[i] != nullptr) ? right.slots[i]->clone() : nullptr;
         }
     }
     return *this;
@@ -66,4 +66,16 @@ AMateria* MateriaSource::createMateria(std::string const & type)
     }
     
     return nullptr;
+}
+
+MateriaSource::~MateriaSource()
+{
+    for (int i = 0; i < SLOTS_AMOUNT; ++i)
+    {
+        if (slots[i] != nullptr)
+        {
+            delete slots[i];
+            slots[i] = nullptr;
+        }
+    }
 }

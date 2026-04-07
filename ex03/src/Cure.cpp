@@ -19,7 +19,7 @@ Cure::Cure(): Cure("cure") { }
 
 Cure::Cure(std::string const & type): AMateria(type) { }
 
-Cure::Cure(const Cure& other)
+Cure::Cure(const Cure& other): AMateria(other)
 {
     *this = other;
 }

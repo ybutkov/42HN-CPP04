@@ -8,7 +8,6 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -g -std=c++17 $(INCLUDES) 
 
 SRCS_FILES 	= AMateria.cpp \
-			ICharacter.cpp \
 			Character.cpp \
 			Ice.cpp \
 			Cure.cpp \

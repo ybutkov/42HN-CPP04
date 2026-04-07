@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 18:01:27 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 16:52:52 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/07 20:36:52 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@
 
 Character::Character(): Character("NoBody") { }
 
-Character::Character(std::string name): ICharacter(name) {
+Character::Character(std::string name): name(name) {
     for (int i = 0; i < SLOTS_AMOUNT; ++i)
     {
         slots[i] = nullptr;
     }
 }
 
-Character::Character(const Character& other)
+Character::Character(const Character& other): name(other.name)
 {
+    for (int i = 0; i < SLOTS_AMOUNT; ++i)
+        slots[i] = nullptr;
     *this = other;
 }
 
@@ -33,12 +35,12 @@ Character& Character::operator=(const Character& right)
 {
     if (this != &right)
     {
-        ICharacter::operator=(right);
+        this->name = right.name;
         for (int i = 0; i < SLOTS_AMOUNT; ++i)
         {
             if (slots[i] != nullptr)
                 delete slots[i];
-            this->slots[i] = right.slots[i];
+            this->slots[i] = (right.slots[i] != nullptr) ? right.slots[i]->clone() : nullptr;
         }
     }
     return *this;
@@ -49,7 +51,18 @@ std::string const & Character::getName() const
     return this->name;
 }
 
-Character::~Character() {}
+Character::~Character()
+{
+    for (int i = 0; i < SLOTS_AMOUNT; ++i)
+    {
+        if (slots[i] != nullptr)
+        {
+            delete slots[i];
+            slots[i] = nullptr;
+        }
+            
+    }
+}
 
 void Character::equip(AMateria* m)
 {

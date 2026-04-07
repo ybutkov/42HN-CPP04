@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:11:03 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 16:51:18 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/07 20:57:27 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ class AMateria;
 
 class ICharacter
 {
-protected:
-    std::string name;
-    ICharacter();
-    ICharacter(std::string name);
-    ICharacter(const ICharacter& other);
-    ICharacter& operator=(const ICharacter& right);
 public:
     virtual ~ICharacter() {}
     virtual std::string const & getName() const = 0;

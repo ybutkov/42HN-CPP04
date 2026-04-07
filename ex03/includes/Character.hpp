@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:11:03 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 16:52:33 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/07 20:15:48 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Character: public ICharacter
 {
     static constexpr int SLOTS_AMOUNT = 4;
     AMateria* slots[SLOTS_AMOUNT];
+protected:
+    std::string name;
 public:
     Character();
     Character(std::string name);

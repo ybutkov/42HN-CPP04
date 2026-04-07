@@ -19,7 +19,7 @@ Ice::Ice(): Ice("ice") { }
 
 Ice::Ice(std::string const & type): AMateria(type) { }
 
-Ice::Ice(const Ice& other)
+Ice::Ice(const Ice& other): AMateria(other)
 {
     *this = other;
 }
