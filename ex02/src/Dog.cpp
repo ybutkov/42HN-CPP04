@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:57:51 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 21:52:03 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:27:16 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Dog::Dog(void): Dog("Dog") {}
 
-Dog::Dog(std::string type): Animal(type), brain(new Brain())
+Dog::Dog(std::string type): AAnimal(type), brain(new Brain())
 {
 	std::cout << "Dog constructor creates animal. Type: " << this->type << std::endl;
 	for (int i = 0; i < Brain::IDEAS_AMOUNT; ++i)
@@ -28,7 +28,7 @@ Dog::Dog(std::string type): Animal(type), brain(new Brain())
 	}
 }
 
-Dog::Dog(const Dog& other): Animal(other), brain(new Brain(*other.brain))
+Dog::Dog(const Dog& other): AAnimal(other), brain(new Brain(*other.brain))
 {
 	std::cout << "Dog Copy_constructor copies from " << other.type << std::endl;
 }
@@ -44,7 +44,7 @@ Dog& Dog::operator=(const Dog& other)
 	std::cout << "Dog Copy assignment operator" << std::endl;	
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*(this->brain) = *(other.brain);
 	}
 	return *this;

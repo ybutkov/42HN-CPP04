@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:38:42 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 21:24:17 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:27:09 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Cat::Cat(void): Cat("Cat") {}
 
-Cat::Cat(std::string type): Animal(type), brain(new Brain())
+Cat::Cat(std::string type): AAnimal(type), brain(new Brain())
 {
 	std::cout << "Cat constructor creates animal. Type: " << this->type << std::endl;
 	for (int i = 0; i < Brain::IDEAS_AMOUNT; ++i)
@@ -28,7 +28,7 @@ Cat::Cat(std::string type): Animal(type), brain(new Brain())
 	}
 }
 
-Cat::Cat(const Cat& other): Animal(other), brain(new Brain(*other.brain))
+Cat::Cat(const Cat& other): AAnimal(other), brain(new Brain(*other.brain))
 {
 	std::cout << "Cat Copy_constructor copies Animal from " << other.type << std::endl;
 }
@@ -44,7 +44,7 @@ Cat& Cat::operator=(const Cat& other)
 	std::cout << "Cat Copy assignment operator" << std::endl;	
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*(this->brain) = *(other.brain);
 	}
 	return *this;

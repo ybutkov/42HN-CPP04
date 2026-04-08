@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 18:01:27 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 21:44:09 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:20:14 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ const std::string Brain::IDEAS_OWNER_PREFIX = "'s brilliant idea_";
 
 Brain::Brain()
 {
-    std::cout << "Brain constructor filled with ideas" << std::endl;	
+    std::cout << "Brain constructor filled with standart ideas" << std::endl;	
     for (int i = 0; i < IDEAS_AMOUNT; ++i)
     {
         ideas[i] = std::string(IDEAS_DEFAULT_PREFIX) + std::to_string(i);

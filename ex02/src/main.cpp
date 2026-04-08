@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:34:38 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 22:26:05 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 18:23:20 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main()
 {
-	Animal *animals[6];
+	AAnimal *animals[6];
 	int amount_ideas_to_print = 5;
 	
 	for (int i = 0; i < 3; ++i)
@@ -56,7 +56,7 @@ int main()
 	}
 	std::cout << "==================================================" <<std::endl;
 
-	for (Animal* animal: animals)
+	for (AAnimal* animal: animals)
 	{
 		delete animal;
 	}

@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:38:42 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 22:15:10 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:26:29 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 #include <iostream>
 #include <string_view>
 
-Animal::Animal(void): Animal("Just_animal") {}
+AAnimal::AAnimal(void): AAnimal("Just_animal") {}
 
-Animal::Animal(std::string type): type(type)
+AAnimal::AAnimal(std::string type): type(type)
 {
 	std::cout << "Animal constructor creates animal. Type: " << type << std::endl;	
 }
 
-Animal::Animal(const Animal& other)
+AAnimal::AAnimal(const AAnimal& other)
 {
 	std::cout << "Animal Copy_constructor copies Animal from " << other.type << std::endl;
 	*this = other;
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
 	std::cout << "Animal Destructor destroys " << type << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other)
+AAnimal& AAnimal::operator=(const AAnimal& other)
 {
 	std::cout << "Animal Copy assignment operator" << std::endl;	
 	if (this != &other)

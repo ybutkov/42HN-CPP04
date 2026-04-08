@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:37:10 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 20:20:32 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:26:55 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "Brain.hpp"
 #include <string>
 
-class Dog: public Animal
+class Dog: public AAnimal
 {
 	Brain* brain;
 protected:

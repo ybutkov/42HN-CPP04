@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 17:30:53 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 21:40:09 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 13:25:14 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Brain
 public:     
     static constexpr int IDEAS_AMOUNT = 100;
     static const std::string IDEAS_OWNER_PREFIX;
-
     static const std::string IDEAS_DEFAULT_PREFIX;
+private:
     std::string ideas[IDEAS_AMOUNT]; 
     
 public:     
