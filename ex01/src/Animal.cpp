@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 21:38:42 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 16:48:42 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 19:02:52 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ Animal::Animal(std::string type): type(type)
 	std::cout << "Animal constructor creates animal. Type: " << type << std::endl;	
 }
 
-Animal::Animal(const Animal& other)
+Animal::Animal(const Animal& other): type(other.type)
 {
 	std::cout << "Animal Copy_constructor copies Animal from " << other.type << std::endl;
-	*this = other;
 }
 
 Animal::~Animal(void)

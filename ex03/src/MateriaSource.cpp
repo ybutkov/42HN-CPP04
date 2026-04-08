@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:26:17 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 20:55:24 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 18:41:12 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& other)
 {
-    *this = other;
+    for (int i = 0; i < SLOTS_AMOUNT; ++i)
+    {
+        slots[i] = (other.slots[i] != nullptr) ? other.slots[i]->clone() : nullptr;
+    }
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& right)

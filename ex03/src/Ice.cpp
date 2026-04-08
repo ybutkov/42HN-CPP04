@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:07:37 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 17:59:22 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 18:53:58 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ Ice::Ice(): Ice("ice") { }
 
 Ice::Ice(std::string const & type): AMateria(type) { }
 
-Ice::Ice(const Ice& other): AMateria(other)
-{
-    *this = other;
-}
+Ice::Ice(const Ice& other): AMateria(other) { }
 
 Ice::~Ice() { }
 

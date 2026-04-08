@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:25:14 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 17:31:21 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 18:52:47 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ AMateria::AMateria(): AMateria("NoType") {}
 
 AMateria::AMateria(std::string const &type): type(type) {}
 
-AMateria::AMateria(const AMateria &other)
-{
-	*this = other;	
-}
+AMateria::AMateria(const AMateria &other): type(other.type) { }
 
 AMateria::~AMateria() {}
 

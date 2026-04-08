@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 18:01:27 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 20:36:52 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 20:00:41 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ Character::Character(std::string name): name(name) {
 Character::Character(const Character& other): name(other.name)
 {
     for (int i = 0; i < SLOTS_AMOUNT; ++i)
-        slots[i] = nullptr;
-    *this = other;
+    {
+        slots[i] = (other.slots[i] != nullptr) ? other.slots[i]->clone() : nullptr;
+    }
 }
 
 Character& Character::operator=(const Character& right)

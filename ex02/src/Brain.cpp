@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 18:01:27 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/06 21:44:09 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 19:04:30 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ Brain::Brain()
 Brain::Brain(const Brain& other)
 {
 	std::cout << "Brain Copy_constructor copies Brain" << std::endl;
-    *this = other;
+    for (int i = 0; i < IDEAS_AMOUNT; ++i)
+    {
+        this->ideas[i] = other.ideas[i];
+    }
 }
 
 Brain& Brain::operator=(const Brain& other)

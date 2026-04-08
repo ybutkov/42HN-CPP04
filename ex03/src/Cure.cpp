@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:07:37 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/07 17:59:34 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 18:53:45 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ Cure::Cure(): Cure("cure") { }
 
 Cure::Cure(std::string const & type): AMateria(type) { }
 
-Cure::Cure(const Cure& other): AMateria(other)
-{
-    *this = other;
-}
+Cure::Cure(const Cure& other): AMateria(other) { }
 
 Cure::~Cure() { }
 
